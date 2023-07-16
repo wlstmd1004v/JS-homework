@@ -1,13 +1,12 @@
+// 1. email 정규표현식을 사용한 validation
+// 2. pw 정규표현식을 사용한 validation
+// 3. 상태 변수 관리
+// 4. 로그인 버튼을 클릭시 조건처리
 const user = {
   id: 'asd@naver.com',
   pw: 'spdlqj123!@'
 };
 
-
-// 1. email 정규표현식을 사용한 validation
-// 2. pw 정규표현식을 사용한 validation
-// 3. 상태 변수 관리
-// 4. 로그인 버튼을 클릭시 조건처리
 const email = document.querySelector('.user-email-input');
 const pw = document.querySelector('.user-password-input');
 const button = document.querySelector('.btn-login');
@@ -56,7 +55,8 @@ pw.addEventListener('input',function() {
 })
 
 // 로그인 버튼을 클릭시 조건처리
-button.addEventListener('click',()=>{
+button.addEventListener('click',(e)=>{
+  e.preventDefault();
   
   if( email.value === user.id && pw.value === user.pw) {
     window.location.href = 'welcome.html';
@@ -65,10 +65,3 @@ button.addEventListener('click',()=>{
   }
   
 })
-
-
-
-
-
-
-
